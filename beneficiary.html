@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SimpleBank - Beneficiaries</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<nav class="navbar navbar-dark bg-primary"><div class="container"><a class="navbar-brand" href="dashboard.html">SimpleBank</a></div></nav>
+<main class="container py-4">
+  <h2>Beneficiaries</h2>
+  <form id="beneficiaryForm" class="card card-body shadow-sm mb-4">
+    <div class="row g-3">
+      <div class="col-md-5"><label class="form-label">Name</label><input id="beneficiaryName" class="form-control" required></div>
+      <div class="col-md-5"><label class="form-label">Account Number</label><input id="beneficiaryAccount" class="form-control" pattern="[0-9]{6,12}" required></div>
+      <div class="col-md-2 d-flex align-items-end"><button class="btn btn-primary w-100">Add</button></div>
+    </div>
+  </form>
+  <ul id="beneficiaryList" class="list-group mb-3"></ul>
+  <a href="dashboard.html" class="btn btn-outline-primary">Back to Dashboard</a>
+</main>
+<script src="js/common.js"></script><script src="js/beneficiary.js"></script>
+</body></html>

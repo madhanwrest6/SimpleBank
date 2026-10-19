@@ -1,0 +1,4 @@
+const state=getState(), list=document.getElementById("beneficiaryList");
+function render(){list.innerHTML="";state.beneficiaries.forEach((b,i)=>list.insertAdjacentHTML("beforeend",`<li class="list-group-item d-flex justify-content-between">${b.name} — ${b.account}<button class="btn btn-sm btn-outline-danger" onclick="removeB(${i})">Remove</button></li>`));}
+window.removeB=i=>{state.beneficiaries.splice(i,1);saveState(state);render();};
+document.getElementById("beneficiaryForm").addEventListener("submit",e=>{e.preventDefault();state.beneficiaries.push({name:beneficiaryName.value.trim(),account:beneficiaryAccount.value.trim()});saveState(state);e.target.reset();render();});render();

@@ -1,0 +1,3 @@
+const state=getState(), table=document.getElementById("transactionTable"), search=document.getElementById("searchTransaction"), filter=document.getElementById("typeFilter");
+function render(){table.innerHTML="";const q=search.value.toLowerCase();state.transactions.filter(t=>t.description.toLowerCase().includes(q)&&(filter.value==="All"||t.type===filter.value)).slice().reverse().forEach(t=>table.insertAdjacentHTML("beforeend",`<tr><td>${t.date}</td><td>${t.description}</td><td>${t.type}</td><td class="${t.type==="Credit"?"amount-credit":"amount-debit"}">${money(t.amount)}</td></tr>`));}
+search.addEventListener("input",render);filter.addEventListener("change",render);render();
